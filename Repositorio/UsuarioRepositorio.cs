@@ -71,7 +71,6 @@ namespace Repositorio
             {
                 ID = (int)row["id_usuario"],
                 UserName = row["username"].ToString(),
-                //Contraseña = row["password"].ToString(),
                 Perfil = new Perfil()
                 {
                     ID = (int)row["id_perfil"],
