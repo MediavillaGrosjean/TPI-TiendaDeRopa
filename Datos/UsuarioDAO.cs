@@ -30,12 +30,12 @@ namespace Datos
             return _storeProcedure.LeerPorStoreProcedure("ObtenerUsuarioPorCredenciales", parametros);
         }
 
-        public DataTable ValidarUsuario(string nombreUsuario, string contraseña)
+        public DataTable ValidarUsuario(string nombreUsuario, string password)
         {
             SqlParameter[] parametros = new SqlParameter[]
             {
                 new SqlParameter("@NombreUsuario", nombreUsuario),
-                new SqlParameter("@Contraseña", contraseña)
+                new SqlParameter("@Password", password)
             };
 
             return _storeProcedure.LeerPorStoreProcedure("sp_validar_usuarios", parametros);
