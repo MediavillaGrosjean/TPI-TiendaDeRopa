@@ -50,15 +50,15 @@ namespace Repositorio
             return usuario;
         }*/
 
-        public Usuario ValidarUsuario(string nombreUsuario, string contraseña)
+        public Usuario ValidarUsuario(string nombreUsuario, string password)
         {
             SqlParameter[] parametros = new SqlParameter[]
             {
                 new SqlParameter("@NombreUsuario", nombreUsuario),
-                new SqlParameter("@Contraseña", contraseña)
+                new SqlParameter("@Password", password)
             };
 
-            DataTable dt = _usuarioDAO.ValidarUsuario(nombreUsuario, contraseña);
+            DataTable dt = _usuarioDAO.ValidarUsuario(nombreUsuario, password);
 
             if (dt == null || dt.Rows.Count == 0)
             {
