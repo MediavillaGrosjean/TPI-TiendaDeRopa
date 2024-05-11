@@ -20,36 +20,6 @@ namespace Repositorio
             _usuarioDAO = new UsuarioDAO();
         }
 
-        // Devuelve el password inclusive
-        /*public Usuario ObtenerUsuarioPorCredenciales(string nombreUsuario, string contraseña)
-        {
-            SqlParameter[] parametros = new SqlParameter[]
-            {
-                new SqlParameter("@NombreUsuario", nombreUsuario),
-                new SqlParameter("@Contraseña", contraseña)
-            };
-
-            DataTable dt = _usuarioDAO.ObtenerUsuarioPorCredenciales(nombreUsuario, contraseña);
-
-            if (dt.Rows.Count == 0) { return null; }
-
-            DataRow row = dt.Rows[0];
-
-            Usuario usuario = new Usuario()
-            {
-                ID = (int)row["id_usuario"],
-                UserName = row["username"].ToString(),
-                Contraseña = row["password"].ToString(),
-                Perfil = new Perfil()
-                {
-                    ID = (int)row["id_perfil"],
-                    Rol = row["rol"].ToString()
-                }
-            };
-
-            return usuario;
-        }*/
-
         public Usuario ValidarUsuario(string nombreUsuario, string password)
         {
             SqlParameter[] parametros = new SqlParameter[]

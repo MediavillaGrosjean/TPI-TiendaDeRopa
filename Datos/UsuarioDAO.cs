@@ -19,17 +19,6 @@ namespace Datos
             _storeProcedure = new ManejadorStoreProcedure();
         }
 
-        public DataTable ObtenerUsuarioPorCredenciales(string nombreUsuario, string contraseña)
-        {
-            SqlParameter[] parametros = new SqlParameter[]
-            {
-                new SqlParameter("@NombreUsuario", nombreUsuario),
-                new SqlParameter("@Contraseña", contraseña)
-            };
-
-            return _storeProcedure.LeerPorStoreProcedure("ObtenerUsuarioPorCredenciales", parametros);
-        }
-
         public DataTable ValidarUsuario(string nombreUsuario, string password)
         {
             SqlParameter[] parametros = new SqlParameter[]
